@@ -13,10 +13,10 @@ public class Min {
 		pepole.add(new Person("Noor Semson", 20, Person.Gender.FEMAIL));
 		pepole.add(new Person("Bassam Aldalati", 28, Person.Gender.MAIL));
 		
-		
+		//new stream in the list 
 	String[] names=	pepole.stream().filter((Person p) -> {return p.gender == Person.Gender.FEMAIL;})
 		.filter((Person p)->{return p.age>=10;})
-		.sorted(Person::comparAge)
+		.sorted(Person::comparSurName)
 		.map((p)->{return p.firstName;})
 		.toArray((l)->{return new String[l];});
 	for (String str : names) {
